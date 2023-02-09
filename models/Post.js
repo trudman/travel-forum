@@ -11,7 +11,7 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    tile: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
