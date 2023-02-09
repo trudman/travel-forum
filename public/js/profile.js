@@ -45,3 +45,4 @@ document
 document
   .querySelector('.post-list')
   .addEventListener('click', delButtonHandler);
+  
