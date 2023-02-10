@@ -1,12 +1,12 @@
 const router = require("express").Router();
-const { Post, User, Comment } = require("../../models");
+const { Post } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 router.post("/", withAuth, async (req, res) => {
   try {
     const postData = await Post.create({
       title: req.body.title,
-      comment_text: req.body.comment_text,
+      post_text: req.body.post_text,
       user_id: req.session.user_id,
     });
 
@@ -21,7 +21,7 @@ router.put("/:id", withAuth, async (req, res) => {
     const postData = await Post.update(
       {
         title: req.body.title,
-        comment_text: req.body.comment_text,
+        post_text: req.body.post_text,
       },
       {
         where: {

@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+    <h2>Welcome, {{username}}!</h2>
   </div>
 </div>
 
@@ -10,35 +10,35 @@
 
     <form class="form new-post-form">
       <div class="form-group">
-        <label for="post-name">post name:</label>
-        <input class="form-input" type="text" id="post-name" name="post-name" />
+        <label for="title">Location:</label>
+        <input class="form-input" type="text" id="title" name="title" />
       </div>
       <div class="form-group">
-        <label for="post-desc">description:</label>
-        <textarea class="form-input" id="post-desc" name="post-desc"></textarea>
+        <label for="post-text">Post:</label>
+        <textarea class="form-input" id="post-text" name="post-text"></textarea>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary" id="create">Create</button>
       </div>
     </form>
   </div>
 
   {{#if posts.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Posts:</h3>
+    <div class="col-md-6 project-list">
+      <h3>Current Posts:</h3>
 
-    {{#each posts as |post|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{post.id}}">{{post.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
-      </div>
+      {{#each posts as |post|}}
+        <div class="row mb-4 project">
+          <div class="col-md-5">
+            <h3>{{post.title}}</h3>
+            <p>{{post.post_text}}</p>
+            <p>Created by {{post.user.username}} on {{format_date post.date_created}}</p>
+          </div>
+
+        </div>
+      {{/each}}
     </div>
-    {{/each}}
-  </div>
   {{/if}}
 </div>
 
-<script src="./js/profile.js"></script>
+<script src="/js/profile.js"></script>
