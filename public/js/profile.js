@@ -6,7 +6,7 @@ const newFormHandler = async (event) => {
   const post_text = document.querySelector("#post-text").value.trim();
 
   if (title && post_text) {
-    const response = await fetch(`/api/posts`, {
+    const response = await fetch(`/api/post`, {
       method: "POST",
       body: JSON.stringify({ title, post_text }),
       headers: {
@@ -15,6 +15,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
+      console.log("test");
       document.location.replace("/profile");
     } else {
       alert(response.statusText);
