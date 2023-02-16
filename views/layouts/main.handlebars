@@ -15,31 +15,34 @@
   </head>
 
   <body>
-    <div class="flex-column justify-space-around">
+    <nav class="flex-row justify-space-around">
       <div class="container-fluid bg-dark">
         <header class="display-flex justify-space-between align-center p-2">
           <h1 class="text-center text-primary font-weight-bold">
-            <a href="/">Travel Blog</a></h1>
+            <a href="/">Travel Blog</a>
+          </h1>
+          <h6 class="text-center text-primary font-italic">A place to brag about your adventures!</h6>
       </div>
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="d-flex flex-row bg-dark">
             <!-- Conditionally render login or logout links -->
             {{#if logged_in}}
               <a
-                class="nav-link active"
+                class="text center nav-link active"
                 aria-current="page"
                 href="/profile"
                 >Profile</a>
               <a class="nav-link" href="/" id="logout">Logout</a>
+              <a class="nav-link" href="/" id="home">Home</a>
             {{else}}
               <a href="/login">Login</a>
             {{/if}}
-          </nav>
+          </div>
         </header>
         <main class="container container-fluid mt-5">
           <!-- Render the sub layout -->
           {{{body}}}
         </main>
-    </div>
+    </nav>
     <!-- Render script for logged in users only -->
     {{#if logged_in}}
       <script src="/js/logout.js"></script>
