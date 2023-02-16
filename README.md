@@ -10,7 +10,7 @@
   - [License](#license)
 
   ## Description
-  This program is used to enable travelers and vacation seekeer to blog about locations they've visited. This application will also serve fellow travelers in learning about new locations they may want to visit. 
+  This program is used to enable travelers and vacation seekers to blog about locations they've visited. This application will also serve fellow travelers in learning about new locations they may want to visit. 
 
   ## Installation
   npm i<br>
