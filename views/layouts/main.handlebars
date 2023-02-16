@@ -20,7 +20,7 @@
         <header class="display-flex justify-space-between align-center p-2">
           <h1 class="text-center text-primary font-weight-bold">
             <a href="/">Travel Blog</a></h1>
-      </div>
+      
           <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <!-- Conditionally render login or logout links -->
             {{#if logged_in}}
@@ -34,12 +34,23 @@
               <a href="/login">Login</a>
             {{/if}}
           </nav>
+          </div>
         </header>
-        <main class="container container-fluid mt-5">
+         
+          <div class="col-md-4">
+            <div class="picture">
+              <a href="/images/pexels-sven-huls-3801347.jpg">
+                <img src="/images/pexels-sven-huls-3801347.jpg" class="float-left" style="width:110%">
+                  
+              </a>
+            </div>
+         </div>
+         </div>
+        <main class="container container-fluid mt-5 padding-left">
           <!-- Render the sub layout -->
           {{{body}}}
         </main>
-    </div>
+    
     <!-- Render script for logged in users only -->
     {{#if logged_in}}
       <script src="/js/logout.js"></script>
